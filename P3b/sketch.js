@@ -1,19 +1,28 @@
-var h =0;
+
 
 function setup() {
-  createCanvas(400,400);
-  fill(0);
+  createCanvas(600,600);
   colorMode(RGB);
+  background(141,220,224);
   frameRate(5);
+  noStroke();
+  fill(240,3,3)
+  rect(280,185, 60, 85);
+  rect(340,225, 90, 45);
+  fill(0)
+  ellipse(310,275, 50,50);
+  ellipse(370,280, 35,35);
+  ellipse(410,280, 35,35);
+  stroke(255,201,14)
+  strokeWeight(4);
+  line(310,280,410,280)
 }
 
-function draw(){
-  fill(255,0,128);
-  background(255, 215, 0);
-      for(var y = 0; y < height; y = y+1){
-        
-        for(var i = 0; i < random(1,13) ; i = i + 1) {
-        ellipse(15 + i*25, 15 + y*31, 10, 10);
-      }
-    }
+function draw() {
+  stroke(0)
+  strokeWeight(1)
+  for(var x = 0; x < width; x = x+10){
+    fill(random(50,150));
+    rect(x,width/2, 10,10);
+  }
 }
