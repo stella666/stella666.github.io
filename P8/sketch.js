@@ -9,9 +9,9 @@ function setup() {
 function draw() {
   background(168,211,255);
   k1za(mouseX, mouseY,bukur1);
-  k1za(100,120,bukur1)
+  k1za(100,100,bukur1)
+  k1za(200,200,bukur1)
   k1za(300,300,bukur1)
-  k1za(200,230,bukur1)
 
 }
 
@@ -30,14 +30,15 @@ function k1za(x,y,bukur){
   ellipse (x+10,y-bukur, augu1,augu1);
   // Teiknum eyrun
   fill(127)
-  triangle(x-23, y-80, x-20, y-110, x-10, y-90);
-  triangle(x+10, y-90, x+21, y-110, x+22, y-80);
+  triangle(177, 150, 180, 120, 190, 140);
+  triangle(210, 140, 221, 120, 222, 150);
   // Teiknum nefið
   fill(255,174,201)
-  triangle(x-5, y-65, x-1, y-57, x+4, y-65);
-}
+  triangle(195, 165, 199, 173, 204, 165);
+
   function mousePressed(){
     augu1 = augu1+2
     haus1 = haus1+5
     bukur1 = bukur1+10
   }
+}
