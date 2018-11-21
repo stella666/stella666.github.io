@@ -11,7 +11,7 @@ function draw() {
   k1za(mouseX, mouseY,bukur1,haus1,augu1);
   k1za(300,300, 90,70,10)
   k1za(100,300,80,60,10)
-  k1za(200,300,60,40,5)
+  k1za(200,300,60,40,7)
 
 }
 
