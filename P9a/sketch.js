@@ -1,49 +1,49 @@
-var k1za1, k1za2, k1za3;
+
+var k1zur = [];
 
 function setup() {
   createCanvas(600, 600);
-  // Búum til þrjá k1za hluti.
-  k1za1 = new k1za(200,400,80,60,10);
-  k1za2 = new k1za(300,300,60,40,7);
-  k1za3 = new k1za(400,300,90,70,10);
+  // Búum til hundrað k1za hluti.
+  for (var i = 0; i < 100; i = i+1){
+    k1zur[i] = new k1za(random(200,400),random(300,400),random(60,90),random(40,70),random(7,10));
+  }
 }
 
-
-  function draw() {
-	  background(0);
-  fill(248,215,31);
-  noStroke();
-	 ellipse(300,300,500,500);
-  // Ef hluturinn er nálgt miðjunni, þá hreyfir hann sig
-  // Ef ekki þá stoppar hann og blikkar bara augunum.
-  k1za1.move();
-  k1za1.show();
-  k1za1.blink();
-  k1za2.move();
-  k1za2.show();
-  k1za2.blink();
-  k1za3.move();
-  k1za3.show();
-  k1za3.blink();
+function draw() {
+	background(200,150,0);
+  fill(255,200,0);
+	ellipse(300,300,500,500);
+  // Teiknum og hreyfum allar k1zurnar okkar
+  for (var i = 0; i < k1zur.length; i = i+1){
+  	k1zur[i].move();
+  	k1zur[i].show();
+  }
 }
 
-  // Klasinn k1za
+function mousePressed(){
+  for (var i = k1zur.length-1; i >= 0; i = i-1){
+    if(fjarl(k1zur[i].x,k1zur[i].y,mouseX,mouseY) < 50){
+		    k1zur.splice(i,1);
+	  }
+  }
+}
+
+// Klasinn k1za
 // (x,y): er miðpunkturinn sem hann er teiknaður útfrá.
 // bukur: er lengdin á búknum
 // dir: er stefnan sem hann ferðast í
 // speed: er hraðinn sem hann ferðast á
 // headColor: er liturinn á augunum hans
 class k1za{
-  constructor(x,y,bukur,haus,augu) {
-    this.x = x;
-    this.y = y;
-    this.bukur = bukur;
-    this.haus = haus;
-    this.augu = augu
-    this.dir = random(0,2*PI);
-    this.speed = random(0,5);
-    this.headColor = color(127,127,127);
-
+constructor(x,y,bukur,haus,augu) {
+  this.x = x;
+  this.y = y;
+  this.bukur = bukur;
+  this.haus = haus;
+  this.augu = augu
+  this.dir = random(0,2*PI);
+  this.speed = random(0,5);
+  this.headColor = color(127,127,127);
 }
 
 show(){
@@ -84,4 +84,9 @@ move(){
     if((this.x > width-100) || (this.x < 100) || (this.y > height-100) || (this.y < 100))
     this.headColor = color(random(255), random(255), random(255));
     }
+  }
+
+  function fjarl(x1,y1,x2,y2){
+    var dist = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    return dist;
   }
