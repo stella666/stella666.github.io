@@ -10,8 +10,8 @@ function setup() {
 
 
   function draw() {
-	  background(0);
-  fill(248,215,31);
+	  background(55,55,55);
+  fill(255,255,128);
   noStroke();
 	 ellipse(300,300,500,500);
   // Ef hluturinn er nálgt miðjunni, þá hreyfir hann sig

@@ -10,13 +10,14 @@ function setup() {
 }
 
 function draw() {
-	background(200,150,0);
-  fill(255,200,0);
+	background(55,55,55);
+  fill(255,255,128);
 	ellipse(300,300,500,500);
   // Teiknum og hreyfum allar k1zurnar okkar
   for (var i = 0; i < k1zur.length; i = i+1){
   	k1zur[i].move();
   	k1zur[i].show();
+    k1zur[i].blink();
   }
 }
 
