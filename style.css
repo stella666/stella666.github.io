@@ -4,6 +4,26 @@ Til þess að læra að gera eitthvað, prófaðu að leita á google af því s
 "how to change link color." */
 
 body {
-  background-color: #EDF2F4;
-  color: #2B2D42;
+  background: linear-gradient(to bottom, #ff99b3 0%, #ffcc99 100%);
+  font:  bold 15px Georgia, serif;
+  color: #ffffff;
+}
+h1 {
+  border-style: dotted dashed;
+  font: italic bold 40px Georgia, serif;
+  color:  Gold;
+
+
+}
+
+
+li {
+    width: 300px;
+    border: 5px solid Gold
+;
+    padding: 25px;
+    margin: 25px;
+}
+a:hover{
+  color: #99ff33
 }
