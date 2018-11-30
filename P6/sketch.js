@@ -47,6 +47,10 @@ function draw() {
 	}
   for (var i = 0; i < kassar.length; i++){
     kassar [i].show();
+    if (kassar[i].snertir(x,y)){
+      fill(0)
+      text ("snertir",100,100)
+    }
   }
 	// Teikna boltann, spaðann og stigin
   fill(255,201,14);
@@ -73,7 +77,7 @@ class kassiTeikna{
 show(){
   rect(this.x, this.y, this.breidd, this.lengd, this.horn);
 }
-snertir(){
-  return (thix.x)
+snertir(x,y){
+  return (this.x - 30 < x && this.x + 30 > x && this.y - 20 < y && this.y + 30 > y)
 }
 }
